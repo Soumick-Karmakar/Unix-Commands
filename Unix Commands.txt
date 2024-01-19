@@ -1,0 +1,461 @@
+
+date = shows the date and time
+cal  = shows the calendar
+ncal = shows the calendar
+ncal 2021 = shows the calender of that particular year
+ncal july 2021 = shows the calender of that month for that particular year
+ncal -(A/B) <integer_value> = A means after current month and B means before current month and the integer_value determines the number of months before/after the current months that needs to be printed
+ncal -A2 -B2 = shows 2 months before, after and the current month together
+ncal october 1997 -A1 -M = This will show the october and november month of 1997 and "-M" will keep the starting day of the calender as Monday
+man ncal = man command gives manual for the ncal command
+
+echo = prints whatever line is written after it
+
+sort <file_name> = sort the contents of the file alphabetically
+sort <file_name> -r = sorts in the reverse order
+sort <file_name> -u = sorts the data but prints only unique values
+
+rm <file_name> = to delete a file
+
+type <command name> = will show what type of command is it
+which <cammand name> = will find the exact location of an executable command (eg: sort)
+help <command name> = commands which are shell built-in can't be retrieved with man command. Such commands like cd, to retrieve its manual we use help command.
+
+
+Unix Folder structure:
+______________________
+
+
+                                              Root(/)
+    			                        |
+     -----------------------------------------------------------------------------------------------
+     |      |      |     |      |     |      |      |       |      |     |     |     |      |      |
+    bin    opt    home  boot   root  sbin   usr    dev     etc    mnt   var   srv   tmp   lib    media
+                   |                         |                           |
+            ----------------       ----------------------      ----------------------
+            |      |       |       |      |      |      |      |      |      |      |
+         soumick  abc     xyz     bin  include  lib   sbin    cache  log   spool   tmp
+
+
+xdg-open / = this will give user interface for the root directory
+pwd = this will display my currect folder location
+ls = this will display the files/folders in that directory
+ls -l = to use a long listing format
+ls -a = lists the hidden files/folders along with others
+ls -r = lists the files/folders in reverse order while sorting
+ls -s = displays the allocated size of each file, in blocks
+ls -S = sort by file size, largest first
+ls -la --sort=(time/size) = lists in long format and sorts with (time/size)
+ls -m = to have comma seperated list
+
+
+cd .. = back up one level into the parent folder
+cd ~ = to directly move to the home directory
+cd / = to directly move to the root
+
+
+touch <file_name> = will create a file with the specified file name 
+touch <file_name1> <file_name2> = to create multiple files together
+touch ../<file_name> = to create a file in the parent directory
+touch ~/<file_name> = to create a file in the home directory from a diffrent location
+
+
+file <file_name> = to get file details.
+
+
+mkdir <directory_name> = to create a directory
+mkdir -p horse/mares = this will first create a parent directory 'horse' and then create a child directory inside it 'mares'
+
+
+view <file_name> = to look into a file contents
+shift + G = will bring the cursor to the end of the file
+/<item> = to search the item in the file
+n = to find the next match  
+i = then pressing i will enter you in edit mode
+:wq! = to save the changes
+:q! = to refresh the page and do not accept any changes that is being made in the file
+
+
+Using Nano to edit files:
+__________________________
+
+nano <file_name> = to view and edit the file content
+Ctrl + O = means write out, to save the edits done and it will give an option to choose a diffrent file to save the content
+Ctrl + S = will directly save the edits in the file which was opened
+Esc, (Shift + 4)[intended to press $] = to enable soft wrapping
+Esc, \ = to get to the top of the file(for windows Alt+\)
+Ctrl + W = to search(by default case-insensitive) [press Esc, C = to make the search case sensitive, then continue with the search]
+Ctrl + \ = to Replace
+Ctrl + T = to spell check
+Ctrl + X = to exit the file
+Ctrl + G = get help
+
+
+rm <file_name> = to remove the file
+rm <file_name1> <file_name2> = to remove multiple files at time
+rm -d <dir_name> = will remove directory only if it is empty
+rmdir <dir_name> = will remove directory only if it is empty
+rm -(r/R) <dir_name> = will delete the directory and its contents recursively
+rm -ri <dir_name> = will recursively delete but will ask for confirmation before deleting
+
+
+mv <source_file> <destination> = will move the source file in the path specified in destination
+mv <source_dir>/ <destination_dir>/ = will move the source dir into the destination
+mv <dir_1>/ <dir_2>/ <dir_3>/ <dir>/ = will move the dir_1, dir_2 and dir_3 inside dir
+mv <file_name> .. = to move the file to the immediate parent directory
+mv <file1.txt> <file2.txt> = renames the file file1.txt as file2.txt
+
+
+cp <file1> <file2> = will make a copy of that file
+cp <dir1>/ <dir2> -r = to make a copy of dir1 and store as dir2 recursively
+
+
+Shortcuts:
+------------
+Ctrl + L = clear
+Ctrl + a = to move the cursor to the begining of the line
+Ctrl + e = to move the cursor to the end of the line
+Ctrl + f = to move the cursor 1 character forward
+Ctrl + b = to move the cursor 1 character backward
+Alt + f = to move the cursor 1 word forward
+Alt + b = to move the cursor 1 word backward
+Ctrl + t = to swap the character under the cursor with the character preceeding it
+Ctrl + k = to delete the characters from the cursor till the end of the line
+Ctrl + u = to delete the characters from the cursor till the begining of the line
+Alt + d = 
+Ctrl + w = 
+Alt + delete = 
+
+
+history = to list all the previous commands used
+history | less = will show less amt of history
+!5 = to show the 5th command used in the history
+
+
+cat <file_name> = displays the contents of the file
+cat <file1> <file2> = displays the contents of the files together
+cat ~/.bash_history = will print the command history in the home directory
+less <file_name> = to show a large content page by page(to exit the view mode we need to press q)
+tac <file_name> = its rev of cat command. It will print the last line first and the first line last
+rev <file_name> = This will keep the line sequencing correct but it will reverse the sequence of the letters in the word in that particular line
+
+
+head <file_name> = will print the first 10 lines
+head -n15 <file_name> = will print the first 15 lines
+head -15 <filename> = will do the same thing
+
+
+tail <file_name> = will print the last 10 lines 
+tail -n15 <file_name> = will print the last 15 lines 
+tail -15 <filename> = will do the same thing
+tail -f <system-log file> = will always print the last updated 10 lines
+
+
+wc <filename> = will print the no. of lines, no. of words, and the no. of bytes respectively
+wc -l <filename> = will print the no. of lines
+wc -w <filename> = will print the number of words
+wc -c <filename> = will print the number of bytes
+wc -m <filename> = will print the number of characters
+
+
+sort <filename> = will print the contents of the file after sorting
+sort -r <filename> = will print the contents of the file sorted in reverse order
+sort -u <filename> = will print the sorted unique contents of the file
+sort -n <filename> = sorting the lines numerically
+sort -nk 2 <filename> = sorting the lines numerically based on the column no. 2
+
+
+du <dir/filename> = will display the disk usage space
+du -h <dir/filename> = will display the disk usage space in human-readable format (in KB)
+du -sh <dir/filename> = will display the disk usage space in human-readable format (in KB) and summarize the space used by the directory
+du -ah <dir/filename> = will list the sizes of all individual files and directories in a given file path
+du -ah --time <dir/filename> = --time flag will display the time stamp of the file last modified
+du -ch <dir/filename> = the -c flag will add a last line displaying the total space used (--total flag can be used instead of -c)
+du -ah --exclude="*.pdf" = will exclude the files which will have its name matching the pattern in its tail end.
+
+
+command > filename
+date > today.txt = will create a file today.txt if not present and then it will store the output of the command into that file
+command >> filename
+date >> today.txt = will append the output of the command in the file and not overwrite it
+
+
+command < filename
+cat < today.txt = will take the lines from the file as input and give the output
+
+
+sort < file1 >> file2 = this will sort the data from file1 and store the output into file2
+
+command 2> file1 = will store the error in the file1
+ls dir1 2> error.txt = if the dir1 is not present then the error message will get stored in the file1
+
+command 2>> file1 = to append the errors and not overwrite
+
+
+sort colors.txt > sorted.txt 2>> errorlog.txt = will sort the values inside the colors.txt file and store the output in the sorted.txt file and case of any error, the error message will get stored in the errorlog.txt file.
+
+
+ls colors.txt > output.txt 2> output.txt = in case we want to store both the output and the error in the same file
+ls colors.txt > output.txt 2>&1 = this is the shortcut of the above command 
+
+
+ls -l| less = using pipe
+ls -l | wc -l
+
+
+cat <file_name> |tr s S = will print the file contents by editing the lines by replacing the 's' with 'S'
+cat <file_name> |tr -d s = will print the file contents by editing the lines by deleting the 's' from the entire content
+cat <file_name> | tr -d a-z = will print the file contents by editing the lines by deleting all alphabets from a-z
+cat <file_line> | tr -d [:alpha:] = will print the file contents by editing the lines by deleting all alphabets
+cat <file_line> | tr -d [:upper:]
+cat <file_line> | tr -d [:lower:]
+cat <file_name> | tr -d [:digit:] = will print the file contents by editing the lines by deleting all the numbers from the contents
+cat <filename> | tr -d [:alpha:] | tr -d : | tr -d [:blank:]
+
+
+-> command1 -> T -> command2 ->
+               |
+              file
+
+command1 | tee <filename> | command2 = the output of the command1 will get saved in the file and that output will also go as input in command2
+
+
+* represents that there can be one or more characters
+grep *.pdf = will list all files with extension as .pdf
+grep *e.j* = will list all files that have name ending with e and whose extension starts with 'j'
+
+? represents that it will contain a single character
+ls pic?.png = will list the png files that start with pic and contain exactly a single character after that, Eg: pic1.png, picx.png
+
+[] represents the range for matching the characters
+ls pic[135].png = will only get the file list that contains file names with pic1.png, pic3.png and pic5.png
+
+[^] represents the negating range
+ls [^a]* = will list all the files that do not start with 'a'
+ls *[^e] = will list all the files that do not end with 'e'
+ls [^0-9] = will list all the files that do not start with numbers  
+
+{} is called brace expansion
+touch file{1,2,3}.txt = will generate 3 files named file1.txt, file2.txt and file3.txt
+mkdir day{1..31} = will make 31 directories with names day1, day2, until day31
+mkdir -p {Sun,Mon,Tue,Wed,Thu,Fri,Sat}/{Breakfast,Lunch,Dinner} = will first create dir from Sun-Sat and then create their sub-dirs as Breakfast, lunch and dinner
+echo {1..20..2} = will print out numbers from 1 to 20 with a gap of 2 in between i.e. 1,3,5,7,9,11,13,15,17 and 19
+echo {x,y{1..10},z} = will print x, y1, y2,..., y10, z
+
+$((expression))
+echo $((200+800)) = will print 1000
+
+
+locate <file / partial filename / file path>
+locate -iel5 <path> = -i flag is to ignore case, -e flag is to find files that exist, -l5 indicates the limit i.e. the number of output it should display
+
+sudo updatedb = will update the directories with the latest files
+
+
+find = will list all files/directories in the system
+find -type f = will limit the search till the files
+find -type d = will limit the search till the directories
+find <path> -name "<filename>" = will search for the specified file in the given path
+find ~ -type f -name "*.txt" = will list find all .txt file with any name inside the home directory
+find -size +1G = to find all files greater than 1GB
+find -size -50M = to find all files below 50MB
+find -size 20k = to find all files equal to 20KB
+find -user <user_name> = to find the files and directories that belong to a particular user
+find -empty = will list all empty folders
+find -mmin -30 = list files modified in last less than 30 mins
+find -mmin 30 = list files modified in 30th min
+find -mmin +30 = list files modified in last more than 30 mins
+find -amin -30 = list files accessed in last less than 30 mins 
+find -amin 30 = list files accessed in 30th min
+find -amin +30 = list files accessed in last more than 30 mins
+find -atime -30 = list files accessed in last less than 30 days
+find -atime 30 = list files accessed in 30th day
+find -atime +30 = list files accessed in last more than 30 day
+
+
+ls -l = will list files and dir with the last modification time
+ls -lt = will also show the files/dir with the last modification time (modification of file contents)
+ls -lc = will show the files/dir with the last change time (change in file name or the change of permission or even the modification of file contents)
+ls -lu = will show the files/dir with the access time ( last time when the file contents were read )
+
+
+find -cmin -60 -not -name "*.log" = will find the files that were changed in less than 60 mins and which are not log files
+find -cmin -60 ! -name "*.log" = will find the files that were changed in less than 60 mins and which are not log files
+find ~ -iname "tue*" -or -iname "mon*" = will find files in home directory that either start with tue or mon
+find ~ -iname "tue*" -and -iname "*.txt" = will find files in home directory that start with tue and end with .txt
+
+
+find ~ -type f -empty -exec ls -l '{}' ';' = will find all empty files from home directory and will list them 
+find -name "*.txt" -exec rm '{}' ';' = will find all files with .txt extension and delete them
+find -type f -name "*.html" -exec cp '{}' '{}_COPY' ';' = will find all files with extension .html and make a copy of those files with the name ending with '_COPY' Eg: index.html -> index.html_COPY
+find -empty | xargs ls -l = will find all empty files/dir, xargs will send these filtered files/dir as input to ls command
+find -name "chapter[1-4].txt" | xargs cat > fullbook.txt = will find 4 chapter files and pass them to the cat command, which then outputs the combined contents to a file called fullbook.txt
+
+
+grep "cat" animal.txt = will serach for the pattern cat in the file animal.txt and print the file contents with the pattern highlighted
+grep -w "cat" animal.txt = will serach for the word, Eg: cat will be highlighted but not cater
+grep -c "cat" animal.txt = will search for the pattern cat inside the animal.txt file and give the total count of its occurrence
+grep -wc "cat" animal.txt = will search for the word cat inside the animal.txt file and give the total count of its occurrence
+grep -r "cat" = will search the current directory and sub-directories present within it recursively
+grep -ri "cat" = -i flag is to indicate case insensitive
+grep -ri "cat" /<path of any file/directory> = will search for the pattern in the given path
+grep -ri "wom[ae]n" /<path of any file/directory> = will search for the words woman/women in the given path
+grep -ir "dogs" ~ = will search the word dog in the entire home directory
+grep "horse" animal.txt -A1 = will find for the pattern match and insert 1 empty line after each match
+grep "horse" animal.txt -B2 = will find for the pattern match and insert 2 empty line before each match
+grep "horse" animal.txt -A1 -B1 = will find for the pattern match and insert 1 empty line before and after each match
+grep "horse" animal.txt -C1 = will find for the pattern match and insert 1 empty line before and after each match
+grep "horse" animal.txt -wn = will find the word and the line number it belong to and print the same
+grep "horse" animal.txt -nC1 = will find the pattern horse and mark the line number and insert empty lines on top and bottom
+grep "horse" animal.txt -m1 = will display only the 1st match
+
+
+grep 'p...' animal.txt -w = will return all the words that start with p and have exactly 3 letters after it.
+grep "^I" animal.txt -w = indicates that the letter I should be at the starting of a line
+grep ")$" aminal.txt = indicates that the ')' should only be at the end of a line
+grep "2[1-6]" animal.txt = will return all numbers between 21 to 26
+grep "me[^et]" animal.txt -w = will return all words starting with "me" but should not contain 'e' or 't' after 'me'
+
+
+grep "birds?" animal.txt -wE = will return words like bird/birds, -E flag means Extended Regular Expression 
+grep "[aeiou]{3}" -E animal.txt = will return matches where 3 letters among (a,e,i,o,u) appear consecutively
+grep "[aeiou]{2,4}" -E animal.txt = will return matches where either 2/3/4 letters among (a,e,i,o,u) appear consecutively
+
+
+ps = will list all running processes for the user
+ps -aux = will list all running processes in the machine
+ps -au<username here> = will also list the running processes for the user
+ps -aux | grep "sound" -i = will return all processes that have "sound" in their name.
+
+find ~ -name "*.txt" ! -empty -type f -exec grep "purple" '{}' ';' = will find in home dir files with .txt extension and which are not empty, upon those file grep command is executed to search for the pattern "purple"
+find ~ -name "*.txt" ! -empty -type f -exec grep -l "purple" '{}' ';' = will list the files where the match is found
+find ~ -name "*.txt" ! -empty -type f -exec grep -n "purple" '{}' ';' = will display the line number where the match is found
+
+
+whoami = will return the name of the user account with which you logged into the machine
+chmod <mode> <filename> = to change file permission
+
+Octal Permissions
+-----------------
+
+Octal  Binary  File_mode
+0      000     ---
+1      001     --x
+2      010     -w-
+3      011     -wx
+4      100     r--
+5      101     r-x
+6      110     rw-
+7      111     rwx
+
+==========================
+
+r    w    x
+2^2  2^1  2^0
+4    2    1
+
+==========================
+
+su - <user> = will help to switch user
+sudo -l = this command displays the allowed commands that a user can run
+sudo apt update = will update system software
+chown <username> <filename> = will make the user owner of the specified file
+sudo chown <username> <filename> = sudo should be used to change the ownership if it does not give permission to normal user
+chown :<groupname> <filename> = to change the group permission
+sudo chown <username>:<groupname> <filename> = to change the file ownership for both user and group together
+groups <username> = to check to which groups do a user tagged to
+sudo addgroup <groupname> = will help creating a group
+adduser <username> <groupname> = adding group members
+
+
+printenv = to view the environment variables and their current values
+printenv | less = to display less
+printenv | grep USER
+printenv | grep HOME
+echo $USER
+echo $OLDPWD
+
+
+animal = horse
+echo $animal 
+export person
+# This will return the value "horse" and export person command will save the value in environment variable
+
+PS1=hiIamwaiting = will change the prompt to hiIamwaiting
+
+
+Alliases:
+---------------
+alias ll='ls -al'
+
+
+#!/bin/bash = is written in top of a bash script file in order to instruct OS to execute the file with bash. This is not bash specific, if we want to run python script then we need to add the path to python binary
+which python3 = this script will return the path where python3 is installed
+
+
+Cron:
+-----------
+crontab -e = using this command will help to edit the crontab configuration file, the location of the crn tab file is "var/cron/crontab"
+
+
+Cron Syntax:
+-------------
+a       b       c       d       e        command
+minute  hour    day     month   weekday
+(0-59)  (0-23)  (1-31)  (1-12)  (0-6)
+
+
+Cron Characters:
+----------------
+*    Any value
+5,6  List of values (5 and 6)
+1-4  Range of values (1 t0 4)
+*/5  Step value (every 5)
+
+
+30 * * * * command = this means the command will be run every 30th min of an hour, i.e. the job will run whenever the clock shows xx:30 and not any random 30 min interval
+0 0 * * * command = this means the command will run at 00:00 hrs everyday
+30 6 * 4 1 command = this means the command will run at 6:30 am on every monday(1-weekday) in the month of April
+(check cron guru for scheduling jobs)
+
+* * * * * echo"hi its a min" >> ~/time.log 2>&1 = this is a sample cron job, where it will echo hi its a min in every minute and log it into a file time.log in home dir, and if it faces any error the error log will also get logged into the same file
+
+
+tar -cvzf <filename>.tar.gz /<path for all the files that need to be compiled> = this command will make a pile for all log files present in the mentioned path
+-c = create a new archieve
+-v = vost mode,that tells us about the files that it combined into a pile
+-z = to compress or zip
+-f = file name to create the pile and the extension of the file should be .tar.gz
+
+tar -xvzf <filename>.tar.gz = this command is for unzipping the files
+-x = extract
+
+
+Sample crontab to create backup files:
+--------------------------------------
+
+- inside bin make a backup file
+touch my_backup
+
+
+- then edit the file as follows
+#!/bin/bash
+DATE=$(date +%m-%d-%Y-%M)
+BACKUP_DIR="/home/soumick/backups"
+tar -cvzf $BACKUP_DIR/backup-$DATE.tar.gz /home/soumick/Desktop
+
+
+- now give execution access to the file 
+chmod +x my_backup
+
+
+- now to run the file, just go to the file dir and run the file as below
+my_backup 
+
+
+- now go to the crontab file location and start editing
+crontab -e
+
+
+- inside the crontab file edit the following to run the crontab job every minute
+* * * * * /home/soumick/bin/my_backup  
